@@ -40,8 +40,7 @@ class Booking(models.Model):
             raise ValidationError("Invalid seat class")
         return price * self.number_of_passengers
 
-    def clean(self):
-        """Additional validation for fields."""
+    def Check_booking(self): # Validate booking
         if self.number_of_passengers <= 0:
             raise ValidationError("Number of passengers must be greater than zero.")
 
